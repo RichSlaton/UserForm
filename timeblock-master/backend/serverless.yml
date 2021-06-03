@@ -1,0 +1,93 @@
+service: timeblock
+frameworkVersion: '2'
+custom:
+  webpack:
+    webpackConfig: './webpack.config.js'
+    includeModuels: true
+provider:
+  name: aws
+  runtime: nodejs12.x
+  iamRoleStatments:
+    - Effect: 'Allow'
+      Action:
+        - 'dynamodb:*'
+      Resource: '*'
+    - Effect: 'Allow'
+      Action:
+        - 'sts:*'
+      Resource: '*'
+
+functions:
+  getUser:
+    handler: index.getUser
+    events:
+      - http:
+          path: /user
+          method: get
+          cors: true
+  createUserItem:
+    handler: index.createUserItem
+    events:
+      - http:
+          path: /user-item
+          method: post
+          cors: true
+  updateUserItem:
+    handler: index.updateUserItem
+    events:
+      - http:
+          path: /user-item
+          method: put
+          cors: true
+  deleteUserItem:
+    handler: index.deleteUserItem
+    events:
+      - http:
+          path: /user-item
+          method: delete
+          cors: true
+  getDay:
+    handler: index.getDay
+    events:
+      - http:
+          path: /day
+          method: get
+          cors: true
+  createDay:
+    handler: index.createDay
+    events:
+      - http:
+          path: /day
+          method: post
+          cors: true
+  deleteDay:
+    handler: index.deleteDay
+    events:
+      - http:
+          path: /day
+          method: delete
+          cors: true
+  updateDay:
+    handler: index.updateDay
+    events:
+      - http:
+          path: /day
+          method: put
+          cors: true
+  updateDayItem:
+    handler: index.updateDayItem
+    events:
+      - http:
+          path: /day-item
+          method: put
+          cors: true
+  test:
+    handler: index.test
+    events:
+      - http:
+          path: /test
+          method: post
+          cors: true
+plugins:
+  - serverless-webpack
+  - serverless-offline

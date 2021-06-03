@@ -1,0 +1,37 @@
+service: timeblock
+frameworkVersion: '2'
+custom:
+  webpack:
+    webpackConfig: './webpack.config.js'
+    includeModuels: true
+provider:
+  name: aws
+  runtime: nodejs12.x
+  iamRoleStatments:
+    - Effect: 'Allow'
+      Action:
+        - 'dynamodb:*'
+      Resource: '*'
+    - Effect: 'Allow'
+      Action:
+        - 'sts:*'
+      Resource: '*'
+
+functions:
+  test:
+    handler: index.testGet
+    events:
+      - http:
+          path: /test
+          method: get
+          cors: true
+  submitForm:
+    handler: index.submit
+    events:
+      - http:
+          path: /submit
+          method: post
+          cors: true
+plugins:
+  - serverless-webpack
+  - serverless-offline

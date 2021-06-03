@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "fullstack redux-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serverless offline start --host 127.0.0.1 --http-port 5001"
+  },
+  "author": "ryan sulewski",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.824.0",
+    "dynamoose": "^2.5.0",
+    "lodash": "^4.17.20",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "babel-loader": "^8.2.1",
+    "serverless-offline": "^6.8.0",
+    "serverless-webpack": "^5.3.5",
+    "webpack": "^5.4.0",
+    "webpack-node-externals": "^2.5.2"
+  }
+}
