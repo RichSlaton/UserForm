@@ -130,7 +130,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "testGet": () => (/* binding */ testGet),
-/* harmony export */   "submit": () => (/* binding */ submit)
+/* harmony export */   "send": () => (/* binding */ send)
 /* harmony export */ });
 /* harmony import */ var source_map_support_register__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! source-map-support/register */ "source-map-support/register");
 /* harmony import */ var source_map_support_register__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(source_map_support_register__WEBPACK_IMPORTED_MODULE_0__);
@@ -145,7 +145,7 @@ const testGet = async ({
     testInfo: 'hello'
   });
 };
-const submit = async ({
+const send = async ({
   body
 }) => {
   const formData = JSON.parse(body);

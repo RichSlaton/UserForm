@@ -1,4 +1,3 @@
-
 import { response } from "./helpers";
 
 
@@ -9,7 +8,7 @@ export const testGet = async ({ queryStringParameters }) => {
 };
 
 
-export const submit = async({body})=>{
+export const send = async({body})=>{
   const formData = JSON.parse(body)
   console.log('Form Data Received',{formData})
   return response({sucess:true,formData})
